@@ -1,4 +1,4 @@
-FROM php:8.2-apache
+FROM php:8.3-apache
 
 # Instalar extensiones de base de datos y utilidades
 RUN apt-get update && apt-get install -y libzip-dev zip unzip \
