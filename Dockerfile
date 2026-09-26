@@ -29,3 +29,8 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 RUN php artisan config:clear && \
     php artisan route:clear && \
     php artisan view:clear
+
+# Crear el enlace simbólico y dar permisos
+RUN php artisan storage:link || true && \
+    chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache && \
+    chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
