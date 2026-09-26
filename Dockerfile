@@ -1,5 +1,6 @@
 FROM php:8.3-apache
 
+
 # Instalar extensiones de base de datos y utilidades
 RUN apt-get update && apt-get install -y libzip-dev zip unzip \
     && docker-php-ext-install pdo pdo_mysql zip
@@ -24,3 +25,7 @@ RUN composer install --no-dev --optimize-autoloader
 
 # Dar permisos a las carpetas de sistema
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+
+RUN php artisan config:clear && \
+    php artisan route:clear && \
+    php artisan view:clear
