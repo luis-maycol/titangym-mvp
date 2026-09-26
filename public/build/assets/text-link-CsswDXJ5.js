@@ -1,0 +1,1 @@
+import{a as e,l as t,n}from"./createLucideIcon-iFYiuh6r.js";var r=e();function i({className:e=``,children:i,...a}){return(0,r.jsx)(t,{className:n(`text-foreground underline decoration-neutral-300 underline-offset-4 transition-colors duration-300 ease-out hover:decoration-current! dark:decoration-neutral-500`,e),...a,children:i})}export{i as t};
